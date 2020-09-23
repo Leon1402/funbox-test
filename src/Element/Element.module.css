@@ -165,19 +165,11 @@
 
 @media screen and (max-width: 1200px) {
     .element {
-        margin-bottom: 30px;
+        margin-bottom: 60px;
     }
 }
 
 @media screen and (max-width: 800px) {
-    .element {
-        margin-bottom: 30px;
-    }
-    .corner:after {
-        top: 5px
-    }
-    .corner {
-        top: -44px;
-    }
+    
 }
 

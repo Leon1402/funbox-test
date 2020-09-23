@@ -5,6 +5,8 @@ import Element from './Element/Element';
 const App = (props) => {
   return (
     <div className='App'>
+      <div className='upShadow'></div>
+      <div className='downShadow'></div>
       <div className='content'>
         <div className='article'>
           <h1>Ты сегодня покормил кота?</h1>
