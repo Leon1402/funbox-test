@@ -20,25 +20,24 @@
     border: 1px solid grey;
     display: table-cell;
     vertical-align: middle;
-    position: relative;
 }
 .App:before {
+    position: absolute;
     content: '';
     width: 100%;
     background-color: #FFF;
-    position: absolute;
     left: 0;
     top: 0;
-    box-shadow: 1px 80px 300px 100px #000;
+    box-shadow: 0px 0px 200px 100px #000;
 }
 .App:after {
+    position: absolute;
     content: '';
     width: 100%;
     background-color: #FFF;
-    position: absolute;
     left: 0;
     bottom: 0;
-    box-shadow: 1px -80px 300px 100px #000;
+    box-shadow: 0px 0px 200px 100px #000;
 }
 .content {
     position: relative;
@@ -57,6 +56,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    z-index: 100;
 }
 
 @media screen and (max-width: 1200px) {
@@ -71,7 +71,7 @@
 }
 @media screen and (max-width: 800px) {
     .elements {
-        max-width: 500px;
-        justify-content: space-around;
+        width: 500px;
+        justify-content: center;
     }
 }

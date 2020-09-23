@@ -31,9 +31,9 @@ const Element = (props) => {
     return (
         <div className={s.element}>
             <div className={`${s.elementBlock} ${selectClassName()}`} 
-            onClick={status==="end"? '': selectElement}
-            onMouseLeave={status==="active"? changeTextOver:''}
-            onMouseEnter={status==="active"? changeTextEnter:''}>
+            onClick={status==="end"? undefined: selectElement}
+            onMouseLeave={status==="active"? changeTextOver:undefined}
+            onMouseEnter={status==="active"? changeTextEnter:undefined}>
                 <div className={`${s.corner} ${selectClassName()}`}></div>
 
                 <Description select={props.state.select[props.state.currentWeight[index]]}
