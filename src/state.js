@@ -7,15 +7,7 @@ let state = {
         ['40 порций', '2 мыши в подарок'],
         ['100 порций', '5 мышей в подарок', 'заказчик доволен']
     ],
-    descriptionText: [
-        'Сказочное заморское яство',
-        'Котэ не одобряет?'],
-
-    currentText: [
-        'Сказочное заморское яство',
-        'Сказочное заморское яство',
-        'Сказочное заморское яство'
-    ],
+    currentText: [0, 0, 0],
     taste: [
         'с фуа-гра',
         'с рыбой',
@@ -52,10 +44,7 @@ export let changeIsActive = (index) => {
     rerenderEntireTree();
 }
 export let changeDescriptionText = (index, operation) => {
-    if (operation)
-        state.currentText[index] = state.descriptionText[0];
-    else
-        state.currentText[index] = state.descriptionText[1];
+    state.currentText[index] = operation;
     rerenderEntireTree();
 }
 export default state;

@@ -22,3 +22,6 @@
     font-size: 1em;
     color: #666;
 }
+.description .inscription.active{
+    color: #e62e7a;
+}

@@ -22,10 +22,10 @@ const Element = (props) => {
         }  
     };
     let changeTextOver = () => {
-        props.changeDescriptionText(index, 0);
+        props.changeDescriptionText(index, 1);
     }
     let changeTextEnter = () => {
-        props.changeDescriptionText(index, 1);
+        props.changeDescriptionText(index, 0);
     }
 
     return (
@@ -38,7 +38,7 @@ const Element = (props) => {
 
                 <Description select={props.state.select[props.state.currentWeight[index]]}
                     taste={props.state.taste[index]} 
-                    descriptionText={props.state.descriptionText[index]}/>
+                    currentText={props.state.currentText[index]}/>
 
                 <div className={s.cat}>
                     <div className={s.pictureCat}></div>
