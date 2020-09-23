@@ -20,6 +20,28 @@
     border: 1px solid grey;
     display: table-cell;
     vertical-align: middle;
+    position: relative;
+}
+.App:before {
+    content: '';
+    width: 100%;
+    background-color: #FFF;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-shadow: 1px 80px 300px 100px #000;
+}
+.App:after {
+    content: '';
+    width: 100%;
+    background-color: #FFF;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    box-shadow: 1px -80px 300px 100px #000;
+}
+.content {
+    position: relative;
 }
 .article h1 {
     color: #FFF;
