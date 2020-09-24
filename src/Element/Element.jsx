@@ -34,7 +34,9 @@ const Element = (props) => {
             onClick={status==="end"? undefined: selectElement}
             onMouseLeave={status==="active"? changeTextOver:undefined}
             onMouseEnter={status==="active"? changeTextEnter:undefined}>
-                <div className={`${s.corner} ${selectClassName()}`}></div>
+                <div className={`${s.corner} ${selectClassName()}`}>
+                    <div className={`${s.cornerBlock} ${selectClassName()}`}></div>
+                </div>
 
                 <Description select={props.state.select[props.state.currentWeight[index]]}
                     taste={props.state.taste[index]} 
