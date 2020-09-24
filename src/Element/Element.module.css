@@ -149,7 +149,7 @@
 }
 .isEnded::before {
    content: '';
-   width: 37px; 
+   width: 38px; 
    height: 36px;  
    background: rgba(255, 255, 255, 0.5);
    position: absolute;
@@ -159,10 +159,11 @@
    -webkit-transition: .5s all;
    -moz-transition: .5s all;
    -ms-transition: .5s all;
+   border-radius: 0 7px 0 0;
 }
 .isEnded::after {
     content: '';
-    width: 275px; 
+    width: 273px; 
     position: absolute;
     height: 36px;  
     background: rgba(255, 255, 255, 0.5);
