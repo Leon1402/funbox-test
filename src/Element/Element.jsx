@@ -8,9 +8,11 @@ const Element = (props) => {
     let index = props.index;
     let status = props.state.status[index];
 
+    // меняем упаковку на выбранную и наоборот
     let selectElement = () => {
         props.changeIsActive(index)
     }
+// Добавляем новый класс к элементам, для смены стилей при смене выбора упаковки
     let selectClassName = () => {
         switch (props.state.status[index]) {
             case 'active':
@@ -21,6 +23,7 @@ const Element = (props) => {
                 return;
         }  
     };
+    // Функции отвечающие за смену текста активной упаковке при наведеннии на нее и ухода
     let changeTextOver = () => {
         props.changeDescriptionText(index, 1);
     }
@@ -34,6 +37,8 @@ const Element = (props) => {
             onClick={status==="end"? undefined: selectElement}
             onMouseLeave={status==="active"? changeTextOver:undefined}
             onMouseEnter={status==="active"? changeTextEnter:undefined}>
+                {/* Элемент с классом elementCorner отвечает за отрисовку верхней части
+                упаковки, в которой срезан левый угол*/}
                 <div className={`${s.elementCorner} ${selectClassName()}`}>
                     <div className={`${s.elementCornerItem} ${selectClassName()}`}></div>
                 </div>

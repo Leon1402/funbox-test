@@ -9,6 +9,7 @@ const Description = (props) => {
         else
             return <p className={s.inscription + ' ' + s.active}>Котэ не одобряет?</p>
     };
+    // создается массив JSX с необходимым форматированием текста(Числа выделены жирным)
     let selectMas = props.select.map((elem, index) => {
         if (Number.isInteger(elem))
             return <b key={index}>{elem}</b>
