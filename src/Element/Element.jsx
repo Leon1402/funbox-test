@@ -30,20 +30,20 @@ const Element = (props) => {
 
     return (
         <div className={s.element}>
-            <div className={`${s.elementBlock} ${selectClassName()}`} 
+            <div className={`${s.elementItem} ${selectClassName()}`} 
             onClick={status==="end"? undefined: selectElement}
             onMouseLeave={status==="active"? changeTextOver:undefined}
             onMouseEnter={status==="active"? changeTextEnter:undefined}>
-                <div className={`${s.corner} ${selectClassName()}`}>
-                    <div className={`${s.cornerBlock} ${selectClassName()}`}></div>
+                <div className={`${s.elementCorner} ${selectClassName()}`}>
+                    <div className={`${s.elementCornerItem} ${selectClassName()}`}></div>
                 </div>
 
                 <Description select={props.state.select[props.state.currentWeight[index]]}
                     taste={props.state.taste[index]} 
                     currentText={props.state.currentText[index]}/>
 
-                <div className={s.cat}>
-                    <div className={s.pictureCat}></div>
+                <div className={s.elementImage}>
+                    <div className={s.elementImageItem}></div>
                 </div>
 
                 <Circle weight={props.state.weight}

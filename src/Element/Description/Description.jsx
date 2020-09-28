@@ -11,7 +11,7 @@ const Description = (props) => {
     };
     let selectMas = props.select.map((elem, index) => <p key={index}>{elem}</p>)
 
-    return <div className={s.description}>
+    return <div className={s.elementDescription}>
         {currentText()}
         <h2>Нямушка</h2>
         <h3>{props.taste}</h3>

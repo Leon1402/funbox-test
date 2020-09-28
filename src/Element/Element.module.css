@@ -1,4 +1,4 @@
-.elementBlock {
+.elementItem {
     width: 320px;
     height: 430px;
     background-color: #f2f2f2;
@@ -14,48 +14,48 @@
     -ms-transition: .5s all;
 }
 
-.elementBlock:hover {
+.elementItem:hover {
     border: 4px solid #2ea8e5;
     border-top: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     -webkit-tap-highlight-color: transparent;
 }
-.elementBlock:hover .circle {
+.elementItem:hover .circle {
     background-color: #2ea8e5;
 }
-.elementBlock:hover .corner {
+.elementItem:hover .elementCorner {
     background-color: #2ea8e5;
 }
-.elementBlock:hover .corner::before {
+.elementItem:hover .elementCorner::before {
     background-color: #2ea8e5;
 }
-.elementBlock:hover .corner.active {
+.elementItem:hover .elementCorner.active {
     background-color: #e62e7a;
 }
-.elementBlock:hover .corner.active::before {
+.elementItem:hover .elementCorner.active::before {
     background-color: #e62e7a;
 }
-.elementBlock.active {
+.elementItem.active {
     border: 4px solid #d91667;
     border-top: none;
 }
-.elementBlock.active:hover {
+.elementItem.active:hover {
     border: 4px solid #e62e7a;
     border-top: none;
 }
-.elementBlock.active:hover .circle {
+.elementItem.active:hover .circle {
     background-color: #e62e7a;
 }
-.elementBlock.ended .circle {
+.elementItem.ended .circle {
     background-color: grey;
 }
-.elementBlock.ended .corner {
+.elementItem.ended .elementCorner {
      background-color: grey;
 }
-.elementBlock.ended .corner::before {
+.elementItem.ended .elementCorner::before {
     background-color: grey;
 }
-.corner {
+.elementCorner {
     background-color: #1698d9;
     height: 40px;
     width: 280px; 
@@ -68,7 +68,7 @@
     -ms-transition: .5s all;
     border-radius: 0 10px 0 0;
 }
-.corner::before {
+.elementCorner::before {
     content: '';
     width: 100px; 
     height: 40px;
@@ -82,7 +82,7 @@
     -moz-transform: skew(-45deg);
     -ms-transform: skew(-45deg);
 }
-.cornerBlock {
+.elementCornerItem {
     position: absolute;
     height: 36px;
     width: 276px;
@@ -91,7 +91,7 @@
     top: 4px;
     border-radius: 0 7px 0 0;
 }
-.cornerBlock::before {
+.elementCornerItem::before {
     content: '';
     width: 90px; 
     height: 36px;
@@ -105,16 +105,16 @@
     -moz-transform: skew(-45deg);
     -ms-transform: skew(-45deg);
 }
-.corner.active {
+.elementCorner.active {
     background-color: #d91667;
 }
-.corner.active::before {
+.elementCorner.active::before {
     background-color: #d91667;
 }
-.corner.ended {
+.elementCorner.ended {
     background-color: grey;
 }
-.cat {
+.elementImage {
     width: 100%;
     height: 270px;
     position: absolute;
@@ -123,7 +123,7 @@
     overflow: hidden;
     border-radius: 6px;
 }
-.pictureCat {
+.elementImageItem {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -181,7 +181,7 @@
 .isEnded.ended {
     display: block;
 }
-.elementBlock.ended {
+.elementItem.ended {
     border-color: grey;
     cursor: auto;
 }

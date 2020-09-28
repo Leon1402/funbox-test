@@ -1,4 +1,4 @@
-.description {
+.elementDescription {
     margin-top: 0px;
     margin-left: -30px;
     text-align: left;
@@ -7,21 +7,21 @@
     left: 25px;
     display: inline-block;
 }
-.description h2 {
+.elementDescription h2 {
     font-size: 3em;
 }
-.description h3 {
+.elementDescription h3 {
     font-size: 1.5em;
     margin-bottom: 15px;
 }
-.description p {
+.elementDescription p {
     color: #666;
     font-size: .9em;
 }
-.description .inscription{
+.elementDescription .inscription{
     font-size: 1em;
     color: #666;
 }
-.description .inscription.active{
+.elementDescription .inscription.active{
     color: #e62e7a;
 }

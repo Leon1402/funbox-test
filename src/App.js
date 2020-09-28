@@ -20,27 +20,15 @@ const App = (props) => {
             changeDescriptionText={props.changeDescriptionText} />
 
           <Element state={props.state}
-            taste={props.state.taste[1]}
-            weight={props.state.weight}
-            currentWeight={props.state.currentWeight[1]}
-            changeWeight={props.changeWeight}
             index={1}
+            changeWeight={props.changeWeight}
             changeIsActive={props.changeIsActive}
-            status={props.state.status[1]}
-            signText={props.state.signText[1]}
-            descriptionText={props.state.currentText[1]}
             changeDescriptionText={props.changeDescriptionText} />
 
           <Element state={props.state}
-            taste={props.state.taste[2]}
-            weight={props.state.weight}
-            currentWeight={props.state.currentWeight[2]}
-            changeWeight={props.changeWeight}
             index={2}
+            changeWeight={props.changeWeight}
             changeIsActive={props.changeIsActive}
-            status={props.state.status[2]}
-            signText={props.state.signText[2]}
-            descriptionText={props.state.currentText[2]}
             changeDescriptionText={props.changeDescriptionText} />
 
         </div>
