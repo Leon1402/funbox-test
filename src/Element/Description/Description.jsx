@@ -9,14 +9,19 @@ const Description = (props) => {
         else
             return <p className={s.inscription + ' ' + s.active}>Котэ не одобряет?</p>
     };
-    let selectMas = props.select.map((elem, index) => <p key={index}>{elem}</p>)
+    let selectMas = props.select.map((elem, index) => {
+        if (Number.isInteger(elem))
+            return <b key={index}>{elem}</b>
+        else
+        return <span key={index}>{elem}<br/></span> 
+});
 
-    return <div className={s.elementDescription}>
-        {currentText()}
-        <h2>Нямушка</h2>
-        <h3>{props.taste}</h3>
-        {selectMas}
-    </div>
+return <div className={s.elementDescription}>
+    {currentText()}
+    <h2>Нямушка</h2>
+    <h3>{props.taste}</h3>
+    <div>{selectMas}</div>
+</div>
 }
 
 export default Description
