@@ -1,10 +1,10 @@
 .elementItem {
     width: 320px;
-    height: 440px;
+    height: 480px;
+    
     background-color: #f2f2f2;
     border: 4px solid #1698d9;
-    border-top: none;
-    border-radius: 0 0 10px 10px;
+    border-radius: 80px 10px 10px 10px;
     text-align: center;
     position: relative;
     cursor: pointer;
@@ -16,7 +16,6 @@
 
 .elementItem:hover {
     border: 4px solid #2ea8e5;
-    border-top: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     -webkit-tap-highlight-color: transparent;
 }
@@ -24,24 +23,28 @@
     background-color: #2ea8e5;
 }
 .elementItem:hover .elementCorner {
-    background-color: #2ea8e5;
+    border-color: #2ea8e5;
 }
 .elementItem:hover .elementCorner::before {
-    background-color: #2ea8e5;
+    border-color: #2ea8e5;
+}
+.elementItem:hover .elementCorner::after {
+    border-color: #2ea8e5;
 }
 .elementItem:hover .elementCorner.active {
-    background-color: #e62e7a;
+    border-color: #e62e7a;
 }
 .elementItem:hover .elementCorner.active::before {
-    background-color: #e62e7a;
+    border-color: #e62e7a;
+}
+.elementItem:hover .elementCorner.active::after {
+    border-color: #e62e7a;
 }
 .elementItem.active {
-    border: 4px solid #d91667;
-    border-top: none;
+    border-color:#d91667;
 }
 .elementItem.active:hover {
-    border: 4px solid #e62e7a;
-    border-top: none;
+    border-color:#e62e7a;
 }
 .elementItem.active:hover .circle {
     background-color: #e62e7a;
@@ -50,69 +53,60 @@
     background-color: grey;
 }
 .elementItem.ended .elementCorner {
-     background-color: grey;
+    border-color: grey;
 }
 .elementItem.ended .elementCorner::before {
-    background-color: grey;
+    border-color: grey;
+}
+.elementItem.ended .elementCorner::after {
+    border-color: grey;
 }
 .elementCorner {
-    background-color: #1698d9;
-    height: 40px;
-    width: 280px; 
+    width: 64px;
+    height: 64px;
+    border-left: 3px solid #1698d9;
     position: absolute;
-    top: -40px;
-    left: 36px;
+    background: #f2f2f2;
+    left: 9.1px;
+    top: 9.1px;
+    transform: rotate(45deg);
     transition: .5s all;
     -webkit-transition: .5s all;
     -moz-transition: .5s all;
     -ms-transition: .5s all;
-    border-radius: 0 10px 0 0;
 }
-.elementCorner::before {
+.elementCorner::before{
+    position: absolute;
+    background: #f2f2f2;
     content: '';
-    width: 100px; 
-    height: 40px;
-    background-color: #1698d9;
-    position: absolute;
+    width: 100%;
+    height: 100%;
     top: 0;
+    left: 0;
+    border-top: 4px solid #1698d9;
+    transform: rotate(-45deg) translate(50.5%,-20%);
     transition: .5s all;
-    left: -20px;
-    transform: skew(-45deg);
-    -webkit-transform: skew(-45deg);
-    -moz-transform: skew(-45deg);
-    -ms-transform: skew(-45deg);
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -ms-transition: .5s all;
 }
-.elementCornerItem {
+.elementCorner::after{
     position: absolute;
-    height: 36px;
-    width: 276px;
-    background-color: #f2f2f2;
-    left: 0px;
-    top: 4px;
-    border-radius: 0 7px 0 0;
-}
-.elementCornerItem::before {
+    background: #f2f2f2;
     content: '';
-    width: 90px; 
-    height: 36px;
-    background-color: #f2f2f2;
-    position: absolute;
-    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    border-bottom: 4px solid #1698d9;
+    transform: rotate(45deg) translate(50.5%,20%);
     transition: .5s all;
-    left: -18px;
-    transform: skew(-45deg);
-    -webkit-transform: skew(-45deg);
-    -moz-transform: skew(-45deg);
-    -ms-transform: skew(-45deg);
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -ms-transition: .5s all;
 }
-.elementCorner.active {
-    background-color: #d91667;
-}
-.elementCorner.active::before {
-    background-color: #d91667;
-}
-.elementCorner.ended {
-    background-color: grey;
+.elementCorner.active, .elementCorner.active::after, .elementCorner.active::before {
+    border-color:#d91667;
 }
 .elementImage {
     width: 100%;
@@ -140,43 +134,13 @@
     height: 100%;
     left: 0;
     top: 0;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, .5);
     display: none;
-    border-radius: 7px;
+    border-radius: 6px;
+    border-top-left-radius: 70px;
     height: 100%;
     width: 100%;
 
-}
-.isEnded::before {
-   content: '';
-   width: 38px; 
-   height: 36px;  
-   background: rgba(255, 255, 255, 0.5);
-   position: absolute;
-   top: -36px;
-   right: 0;
-   transition: .5s all;
-   -webkit-transition: .5s all;
-   -moz-transition: .5s all;
-   -ms-transition: .5s all;
-   border-radius: 0 7px 0 0;
-}
-.isEnded::after {
-    content: '';
-    width: 273px; 
-    position: absolute;
-    height: 36px;  
-    background: rgba(255, 255, 255, 0.5);
-    top: -36px;
-    left: 18px;
-    transform: skew(-45deg);
-    -webkit-transform: skew(-45deg);
-    -moz-transform: skew(-45deg);
-    -ms-transform: skew(-45deg);
-    transition: .5s all;
-    -webkit-transition: .5s all;
-    -moz-transition: .5s all;
-    -ms-transition: .5s all;
 }
 .isEnded.ended {
     display: block;
@@ -218,6 +182,8 @@
 .circle.ended {
     background-color: grey;
 }
+
+
 
 @media screen and (max-width: 1200px) {
     .element {

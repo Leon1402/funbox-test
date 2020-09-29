@@ -39,10 +39,9 @@ const Element = (props) => {
             onMouseEnter={status==="active"? changeTextEnter:undefined}>
                 {/* Элемент с классом elementCorner отвечает за отрисовку верхней части
                 упаковки, в которой срезан левый угол*/}
-                <div className={`${s.elementCorner} ${selectClassName()}`}>
-                    <div className={`${s.elementCornerItem} ${selectClassName()}`}></div>
-                </div>
 
+                <div className={`${s.elementCorner} ${selectClassName()}`}></div>
+                
                 <Description select={props.state.select[props.state.currentWeight[index]]}
                     taste={props.state.taste[index]} 
                     currentText={props.state.currentText[index]}/>
