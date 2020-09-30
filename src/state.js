@@ -1,6 +1,7 @@
 let rerenderEntireTree = () => {
     console.log('asd')
 }
+
 let state = {
     // описание выбранной порции
     select: [
@@ -44,7 +45,7 @@ export let changeWeight = (index) => {
     rerenderEntireTree();
 }
 // функция перерисовки UI
-export let subscribers = (observer) => {
+export let subscribe = (observer) => {
     rerenderEntireTree = observer;
 }
 // Функция выбора упаковки
@@ -57,4 +58,5 @@ export let changeDescriptionText = (index, operation) => {
     state.currentText[index] = operation;
     rerenderEntireTree();
 }
+
 export default state;
