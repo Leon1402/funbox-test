@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import Element from './Element/Element';
+import ElementContainer from './Element/ElementContainer';
 
 const App = (props) => {
+  // let index = 0;
   return (
     <div className='App'>
       <div className='upShadow'></div>
@@ -12,17 +13,12 @@ const App = (props) => {
         <div className='article'>
           <h1>Ты сегодня покормил кота?</h1>
         </div>
-{/* Элемент для отображения упаковок.
+        {/* Элемент для отображения упаковок.
 компонента Element отрисовывает упаковку  */}
         <div className='elements'>
-          <Element store={props.store}
-            index={0}/>
-
-          <Element store={props.store}
-            index={1}/>
-
-          <Element store={props.store}
-            index={2}/>
+          <ElementContainer store={props.store} index={0} />
+          <ElementContainer store={props.store} index={1} />
+          <ElementContainer store={props.store} index={2} />
 
         </div>
       </div>
