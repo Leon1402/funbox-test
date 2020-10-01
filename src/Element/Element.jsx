@@ -11,16 +11,16 @@ const Element = (props) => {
     
     let changeWeight = (e) => {
         e.stopPropagation();
-        props.changeWeight();
+        props.changeWeight(index);
     }
     let selectElement = () => {
-        props.selectElement();
+        props.selectElement(index);
     }
     let changeTextOver = () => {
-        props.changeTextOver();
+        props.changeTextOver(index);
     }
     let changeTextEnter = () => {
-        props.changeTextEnter();
+        props.changeTextEnter(index);
     }
 
     // Добавляем новый класс к элементам, для смены стилей при смене выбора упаковки

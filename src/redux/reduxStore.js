@@ -38,7 +38,7 @@ let initState = {
     // текущий выбранный объем упаковок
     currentWeight: [0, 1, 2],
     // статус упаковок обычная, выбранная, или закончилась
-    status: ['normal', 'active', 'end']
+    status: ['normal', 'active', 'end'],
 };
 
 const reducer = (state = initState, action) => {

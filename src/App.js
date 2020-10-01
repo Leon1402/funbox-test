@@ -3,7 +3,8 @@ import './App.css';
 import ElementContainer from './Element/ElementContainer';
 
 const App = (props) => {
-  // let index = 0;
+  let index = 0;
+  
   return (
     <div className='App'>
       <div className='upShadow'></div>
@@ -16,9 +17,9 @@ const App = (props) => {
         {/* Элемент для отображения упаковок.
 компонента Element отрисовывает упаковку  */}
         <div className='elements'>
-          <ElementContainer store={props.store} index={0} />
-          <ElementContainer store={props.store} index={1} />
-          <ElementContainer store={props.store} index={2} />
+          <ElementContainer index={index++} />
+          <ElementContainer index={index++} />
+          <ElementContainer index={index++} />
 
         </div>
       </div>
