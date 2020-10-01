@@ -15,23 +15,14 @@ const App = (props) => {
 {/* Элемент для отображения упаковок.
 компонента Element отрисовывает упаковку  */}
         <div className='elements'>
-          <Element state={props.state}
-            index={0}
-            changeWeight={props.changeWeight}
-            changeIsActive={props.changeIsActive}
-            changeDescriptionText={props.changeDescriptionText} />
+          <Element store={props.store}
+            index={0}/>
 
-          <Element state={props.state}
-            index={1}
-            changeWeight={props.changeWeight}
-            changeIsActive={props.changeIsActive}
-            changeDescriptionText={props.changeDescriptionText} />
+          <Element store={props.store}
+            index={1}/>
 
-          <Element state={props.state}
-            index={2}
-            changeWeight={props.changeWeight}
-            changeIsActive={props.changeIsActive}
-            changeDescriptionText={props.changeDescriptionText} />
+          <Element store={props.store}
+            index={2}/>
 
         </div>
       </div>

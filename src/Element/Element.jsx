@@ -6,15 +6,15 @@ import SignText from './SignText/SignText';
 
 const Element = (props) => {
     let index = props.index;
-    let status = props.state.status[index];
+    let status = props.store.getState().status[index];
 
     // меняем упаковку на выбранную и наоборот
     let selectElement = () => {
-        props.changeIsActive(index)
+        props.store.changeIsActive(index)
     }
 // Добавляем новый класс к элементам, для смены стилей при смене выбора упаковки
     let selectClassName = () => {
-        switch (props.state.status[index]) {
+        switch (props.store.getState().status[index]) {
             case 'active':
                 return s.active;
             case 'end':
@@ -25,10 +25,10 @@ const Element = (props) => {
     };
     // Функции отвечающие за смену текста активной упаковке при наведеннии на нее и ухода
     let changeTextOver = () => {
-        props.changeDescriptionText(index, 1);
+        props.store.changeDescriptionText(index, 1);
     }
     let changeTextEnter = () => {
-        props.changeDescriptionText(index, 0);
+        props.store.changeDescriptionText(index, 0);
     }
 
     return (
@@ -42,17 +42,18 @@ const Element = (props) => {
 
                 <div className={`${s.elementCorner} ${selectClassName()}`}></div>
                 
-                <Description select={props.state.select[props.state.currentWeight[index]]}
-                    taste={props.state.taste[index]} 
-                    currentText={props.state.currentText[index]}/>
+                <Description 
+                select={props.store.getState().select[props.store.getState().currentWeight[index]]}
+                    taste={props.store.getState().taste[index]} 
+                    currentText={props.store.getState().currentText[index]}/>
 
                 <div className={s.elementImage}>
                     <div className={s.elementImageItem}></div>
                 </div>
 
-                <Circle weight={props.state.weight}
-                    currentWeight={props.state.currentWeight[index]}
-                    changeWeight={props.changeWeight}
+                <Circle weight={props.store.getState().weight}
+                    currentWeight={props.store.getState().currentWeight[index]}
+                    changeWeight={props.store.changeWeight.bind(props.store)}
                     index={index}
                     status={status} 
                     selectClassName={selectClassName}/>
@@ -61,8 +62,8 @@ const Element = (props) => {
             </div>
 
             <SignText index={index}
-            changeIsActive={props.changeIsActive}
-            signText={props.state.signText[index]}
+            changeIsActive={props.store.changeIsActive.bind(props.store)}
+            signText={props.store.getState().signText[index]}
             status={status}/>
         </div>
     );
