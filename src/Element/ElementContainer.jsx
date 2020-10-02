@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { changeTextOverAC, selectElementAC, changeWeightAC } from '../redux/reduxStore';
 import Element from './Element';
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state, ownProps) => {
     return {
         status: state.status,
         select: state.select,
@@ -11,7 +11,8 @@ let mapStateToProps = (state) => {
         taste: state.taste,
         currentText: state.currentText,
         signText: state.signText,
-        weight: state.weight
+        weight: state.weight,
+        index: ownProps.index
     }
 }
 let mapDispatchToProps = (dispatch) => {
@@ -34,6 +35,6 @@ let mapDispatchToProps = (dispatch) => {
         }
     }
 }
+
 const ElementContainer = connect(mapStateToProps, mapDispatchToProps)(Element);
-console.log(ElementContainer)
 export default ElementContainer
