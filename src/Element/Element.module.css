@@ -70,6 +70,9 @@
     left: 9px;
     top: 9.1px;
     transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
     transition: .5s all;
     -webkit-transition: .5s all;
     -moz-transition: .5s all;
@@ -85,6 +88,9 @@
     left: 0;
     border-top: 4px solid #1698d9;
     transform: rotate(-45deg) translate(50.5%,-20%);
+    -webkit-transform: rotate(-45deg) translate(50.5%,-20%);
+    -moz-transform: rotate(-45deg) translate(50.5%,-20%);
+    -ms-transform: rotate(-45deg) translate(50.5%,-20%);
     transition: .5s all;
     -webkit-transition: .5s all;
     -moz-transition: .5s all;
@@ -100,6 +106,9 @@
     bottom: 0;
     border-bottom: 4px solid #1698d9;
     transform: rotate(45deg) translate(50.5%,20%);
+    -webkit-transform: rotate(45deg) translate(50.5%,20%);
+    -moz-transform: rotate(45deg) translate(50.5%,20%);
+    -ms-transform: rotate(45deg) translate(50.5%,20%);
     transition: .5s all;
     -webkit-transition: .5s all;
     -moz-transition: .5s all;
