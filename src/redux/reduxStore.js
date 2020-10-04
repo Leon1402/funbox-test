@@ -43,28 +43,37 @@ let initState = {
 
 const reducer = (state = initState, action) => {
     let index = action.index
-    let stateCopy = { ...state };
     switch (action.type) {
         case 'CHANGE-IS-ACTIVE': // сделать упаковку активной
-            stateCopy.status = [ ...state.status];
-            stateCopy.status[index] =
-                state.status[index] === 'normal' ? 'active' : 'normal';
-            return stateCopy;
+            return {
+                ...state,
+                status: state.status.map((s, i) => {
+                    if (i === index)
+                        return s === 'normal' ? 'active' : 'normal';
+                    return s
+                })
+            }
         case 'CHANGE-DESCRIPTION-TEXT': //смена текста, при наведении и отвода мыши
-            
-            stateCopy.currentText = [...state.currentText]
-            stateCopy.currentText[index] = action.operation;
-            return stateCopy;
+            return {
+                ...state,
+                currentText: state.currentText.map((c, i) => {
+                    if (i === index)
+                        return action.operation
+                    return c;
+                })
+            }
         case 'CHANGE-WEIGHT': //смена объема упаковки
-            stateCopy.currentWeight = [...state.currentWeight]
-            stateCopy.currentWeight[index] =
-                (state.currentWeight[index] === 2) ?
-                    0 : state.currentWeight[index] + 1;
-            return stateCopy;
+            return {
+                ...state,
+                currentWeight: state.currentWeight.map((c, i) => {
+                    if (i === index)
+                        return c === 2 ? 0 : c + 1;
+                    return c;
+                })
+            }
         default:
             return state;
     }
-
 }
 
 export const selectElementAC = (index) => ({ type: CHANGE_IS_ACTIVE, index: index });
