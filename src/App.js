@@ -3,8 +3,10 @@ import './App.css';
 import ElementContainer from './Element/ElementContainer';
 
 const App = (props) => {
-  let index = 0;
-  
+
+  let elements = [];
+  for (let i = 0; i < props.elementsCount; i++)
+    elements.push(<ElementContainer key={i} index={i} />)
   return (
     <div className='App'>
       <div className='upShadow'></div>
@@ -17,10 +19,7 @@ const App = (props) => {
         {/* Элемент для отображения упаковок.
 компонента Element отрисовывает упаковку  */}
         <div className='elements'>
-          <ElementContainer index={index++} />
-          <ElementContainer index={index++} />
-          <ElementContainer index={index++} />
-
+          {elements}
         </div>
       </div>
     </div>

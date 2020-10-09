@@ -1,8 +1,9 @@
 import { createStore } from "redux";
 
-const CHANGE_IS_ACTIVE = 'CHANGE-IS-ACTIVE';
-const CHANGE_DESCRIPTION_TEXT = 'CHANGE-DESCRIPTION-TEXT';
-const CHANGE_WEIGHT = 'CHANGE-WEIGHT';
+const CHANGE_IS_ACTIVE = 'CHANGE_IS_ACTIVE';
+const CHANGE_DESCRIPTION_TEXT = 'CHANGE_DESCRIPTION_TEXT';
+const CHANGE_WEIGHT = 'CHANGE_WEIGHT';
+const GET_ID = 'GET_ID';
 
 let initState = {
     // описание выбранной порции
@@ -39,38 +40,41 @@ let initState = {
     currentWeight: [0, 1, 2],
     // статус упаковок обычная, выбранная, или закончилась
     status: ['normal', 'active', 'end'],
+    elementsCount: 3
 };
 
 const reducer = (state = initState, action) => {
     let index = action.index
     let stateCopy = { ...state };
     switch (action.type) {
-        case 'CHANGE-IS-ACTIVE': // сделать упаковку активной
+        case 'CHANGE_IS_ACTIVE': // сделать упаковку активной
             stateCopy.status = [ ...state.status];
             stateCopy.status[index] =
                 state.status[index] === 'normal' ? 'active' : 'normal';
             return stateCopy;
-        case 'CHANGE-DESCRIPTION-TEXT': //смена текста, при наведении и отвода мыши
-            
+        case 'CHANGE_DESCRIPTION_TEXT': //смена текста, при наведении и отвода мыши
             stateCopy.currentText = [...state.currentText]
             stateCopy.currentText[index] = action.operation;
             return stateCopy;
-        case 'CHANGE-WEIGHT': //смена объема упаковки
+        case 'CHANGE_WEIGHT': //смена объема упаковки
             stateCopy.currentWeight = [...state.currentWeight]
             stateCopy.currentWeight[index] =
                 (state.currentWeight[index] === 2) ?
                     0 : state.currentWeight[index] + 1;
             return stateCopy;
+        case 'GET_ID': //смена объема упаковки
+            stateCopy.id = state.id + 1;
+            return stateCopy;
         default:
             return state;
     }
-
 }
 
 export const selectElementAC = (index) => ({ type: CHANGE_IS_ACTIVE, index: index });
 export const changeTextOverAC = (index, operation) =>
     ({ type: CHANGE_DESCRIPTION_TEXT, index: index, operation: operation });
 export const changeWeightAC = (index) => ({ type: CHANGE_WEIGHT, index: index });
+export const getIdAC = () => ({type:GET_ID})
 
 let store = createStore(reducer);
 

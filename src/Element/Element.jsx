@@ -6,6 +6,7 @@ import SignText from './SignText/SignText';
 
 
 const Element = (props) => {
+    
     let index = props.index;
     let status = props.status[index];
     
