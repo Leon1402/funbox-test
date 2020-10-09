@@ -35,7 +35,6 @@ const Element = (props) => {
                 return;
         }
     };
-
     return (
         <div className={s.element}>
             <div className={`${s.elementItem} ${selectClassName()}`}
