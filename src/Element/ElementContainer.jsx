@@ -1,7 +1,7 @@
-import React from 'react';
 import { connect } from 'react-redux';
-import { changeTextOverAC, selectElementAC, changeWeightAC } from '../redux/reduxStore';
+import { changeTextOverAC, selectElementAC, changeWeightAC, getIdAC } from '../redux/reduxStore';
 import Element from './Element';
+
 
 let mapStateToProps = (state, ownProps) => {
     return {
@@ -12,7 +12,7 @@ let mapStateToProps = (state, ownProps) => {
         currentText: state.currentText,
         signText: state.signText,
         weight: state.weight,
-        index: ownProps.index
+        index: ownProps.index,
     }
 }
 let mapDispatchToProps = (dispatch) => {
@@ -36,5 +36,4 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-const ElementContainer = connect(mapStateToProps, mapDispatchToProps)(Element);
-export default ElementContainer
+export default connect(mapStateToProps, mapDispatchToProps)(Element);

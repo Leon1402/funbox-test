@@ -39,12 +39,12 @@ let initState = {
     currentWeight: [0, 1, 2],
     // статус упаковок обычная, выбранная, или закончилась
     status: ['normal', 'active', 'end'],
-    elementsCount: 3
+    elementsCount: 3,
 };
 
 const reducer = (state = initState, action) => {
     switch (action.type) {
-        case 'CHANGE_IS_ACTIVE': // сделать упаковку активной
+        case CHANGE_IS_ACTIVE: // сделать упаковку активной
             return {
                 ...state,
                 status: state.status.map((s, i) => {
@@ -53,7 +53,7 @@ const reducer = (state = initState, action) => {
                     return s
                 })
             }
-        case 'CHANGE_DESCRIPTION_TEXT': //смена текста, при наведении и отвода мыши
+        case CHANGE_DESCRIPTION_TEXT: //смена текста, при наведении и отвода мыши
             return {
                 ...state,
                 currentText: state.currentText.map((c, i) => {
@@ -62,7 +62,7 @@ const reducer = (state = initState, action) => {
                     return c
                 })
             };
-        case 'CHANGE_WEIGHT': //смена объема упаковки
+        case CHANGE_WEIGHT: //смена объема упаковки
             return {
                 ...state,
                 currentWeight: state.currentWeight.map((c, i) => {
