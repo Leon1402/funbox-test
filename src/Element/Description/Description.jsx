@@ -1,29 +1,36 @@
 import React from 'react';
-import s from './Description.module.css'
+import { useState } from 'react';
+import './Description.css'
 
 const Description = (props) => {
 
-    let currentText = () => {
+    let setCurrentText = () => {
         if (props.currentText === 0)
-            return <p className={s.inscription}>Сказочное заморское яство</p>
+            return <p>Сказочное заморское яство</p>
         else
-            return <p className={s.inscription + ' ' + s.active}>Котэ не одобряет?</p>
+            return <p className={'active'}>Котэ не одобряет?</p>
     };
-    
+
+    let [select, changeSelect] = useState([
+        [10, ' порций', ' мышь в подарок'],
+        [40, ' порций', 2, ' мыши в подарок'],
+        [100, ' порций', 5, ' мышей в подарок', ' заказчик доволен']
+    ])
+
     // создается массив JSX с необходимым форматированием текста(Числа выделены жирным)
-    let selectMas = props.select.map((elem, index) => {
+    let selectMas = select[props.currentWeight].map((elem, index) => {
         if (Number.isInteger(elem))
             return <b key={index}>{elem}</b>
         else
-        return <span key={index}>{elem}<br/></span> 
-});
+            return <span key={index}>{elem}<br /></span>
+    });
 
-return <div className={s.elementDescription}>
-    {currentText()}
-    <h2>Нямушка</h2>
-    <h3>{props.taste}</h3>
-    <div>{selectMas}</div>
-</div>
+    return <div className='element-description'>
+        {setCurrentText()}
+        <h2>Нямушка</h2>
+        <h3>{props.taste}</h3>
+        <div>{selectMas}</div>
+    </div>
 }
 
 export default Description

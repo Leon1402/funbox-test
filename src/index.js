@@ -3,14 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import store from './redux/reduxStore';
-import { Provider } from 'react-redux';
 
 let rerenderEntireTree = () => {
   ReactDOM.render(
-    <Provider store = {store}>
-      <App elementsCount={store.getState().elementsCount}/>
-    </Provider>,
+      <App/>,
     document.getElementById('root')
   );
 };

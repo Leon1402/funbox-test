@@ -27,7 +27,7 @@
 .content {
     position: relative;
 }
-.article h1 {
+.header h1 {
     color: #FFF;
     text-align: center;
     font-family: 'Exo 2.0', sans-serif;
@@ -35,20 +35,20 @@
     text-shadow: 1px 2px 2px black;
     margin-bottom: 25px;
 }
-.elements {
+.content-elements {
     max-width: 1280px;
     margin: auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.upShadow {
+.shadow-element-top {
     width: 100%;
     position: absolute;
     box-shadow: 0 0 400px 100px;
     top: 0;
 }
-.downShadow {
+.shadow-element-bottom {
     position: absolute;
     width: 100%;
     bottom: 0;
@@ -58,13 +58,13 @@
     .article h1 {
         padding-top: 50px;
     }
-    .elements {
+    .content-elements {
         max-width: 800px;
         justify-content: space-around;
     }
 }
 @media screen and (max-width: 800px) {
-    .elements {
+    .content-elements {
         max-width: 500px;
     }
 }

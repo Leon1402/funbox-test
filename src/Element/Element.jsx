@@ -1,74 +1,60 @@
 import React from 'react';
-import Circle from './Circle/Circle';
+import Weight from './Weight/Weight';
 import Description from './Description/Description';
-import s from './Element.module.css'
+import './Element.css'
 import SignText from './SignText/SignText';
 
-
 const Element = (props) => {
-    
-    let index = props.index;
-    let status = props.status[index];
-    
-    let changeWeight = (e) => {
-        e.stopPropagation();
-        props.changeWeight(index);
-    }
-    let selectElement = () => {
-        props.selectElement(index);
-    }
+
     let changeTextOver = () => {
-        props.changeTextOver(index);
+        props.changeCurrentText(1)
     }
     let changeTextEnter = () => {
-        props.changeTextEnter(index);
+        props.changeCurrentText(0)
     }
-
+    
     // Добавляем новый класс к элементам, для смены стилей при смене выбора упаковки
     let selectClassName = () => {
-        switch (status) {
+        switch (props.status) {
             case 'active':
-                return s.active;
+                return 'active';
             case 'end':
-                return s.ended;
+                return 'ended';
             default:
                 return;
         }
     };
     return (
-        <div className={s.element}>
-            <div className={`${s.elementItem} ${selectClassName()}`}
-                onClick={status === "end" ? undefined : selectElement}
-                onMouseLeave={status === "active" ? changeTextOver : undefined}
-                onMouseEnter={status === "active" ? changeTextEnter : undefined}>
+        <div className='element'>
+            <div className={`element-item ${selectClassName()}`}
+                onClick={props.status === "end" ? null : props.selectElement}
+                onMouseLeave={props.status === "active" ? changeTextOver : null}
+                onMouseEnter={props.status === "active" ? changeTextEnter : null}>
+
                 {/* Элемент с классом elementCorner отвечает за отрисовку верхней части
                 упаковки, в которой срезан левый угол*/}
 
-                <div className={`${s.elementCorner} ${selectClassName()}`}></div>
+                <div className={`element-corner ${selectClassName()}`}></div>
 
                 <Description
-                    select={props.select[props.currentWeight[index]]}
-                    taste={props.taste[index]}
-                    currentText={props.currentText[index]} />
+                    currentWeight={props.currentWeight}
+                    taste={props.taste}
+                    currentText={props.currentText} />
 
-                <div className={s.elementImage}>
-                    <div className={s.elementImageItem}></div>
+                <div className='element-image'>
+                    <div className='element-image-item'></div>
                 </div>
 
-                <Circle weight={props.weight}
-                    currentWeight={props.currentWeight[index]}
-                    index={index}
-                    status={status}
-                    selectClassName={selectClassName} 
-                    changeWeight={changeWeight}/>
-
-                <div className={`${s.isEnded} ${selectClassName()}`}></div>
+                <Weight changeCurrentWeight={props.changeCurrentWeight}
+                    currentWeight={props.currentWeight}
+                    selectClassName={selectClassName} />
+                <div className={`element-end ${selectClassName()}`}></div>
             </div>
 
-            <SignText index={index}
-                selectElement={selectElement}
-                signText={props.signText[index]}
-                status={status} />
+            <SignText 
+                selectElement={props.selectElement}
+                signText={props.signText}
+                status={props.status} />
         </div>
     );
 }

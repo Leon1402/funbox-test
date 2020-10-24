@@ -5,20 +5,19 @@ import ElementContainer from './Element/ElementContainer';
 const App = (props) => {
 
   let elements = [];
-  for (let i = 0; i < props.elementsCount; i++)
+  for (let i = 0; i < 3; i++)
     elements.push(<ElementContainer key={i} index={i} />)
+
   return (
     <div className='App'>
-      <div className='upShadow'></div>
-      <div className='downShadow'></div>
+      <div className='shadow-element-top'></div>
+      <div className='shadow-element-bottom'></div>
       {/*upShadow, downShadow  элементы необходимые для прорисовки верхнейи нижней тени соответственно*/}
       <div className='content'>
-        <div className='article'>
+        <header className='header'>
           <h1>Ты сегодня покормил кота?</h1>
-        </div>
-        {/* Элемент для отображения упаковок.
-компонента Element отрисовывает упаковку  */}
-        <div className='elements'>
+        </header>
+        <div className='content-elements'>
           {elements}
         </div>
       </div>

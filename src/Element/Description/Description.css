@@ -1,0 +1,26 @@
+.element-description {
+    margin-left: -30px;
+    text-align: left;
+    position: relative;
+    top: 20px;
+    left: 0px;
+    display: inline-block;
+}
+.element-description h2 {
+    font-size: 48px;
+}
+.element-description h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+.element-description div {
+    color: #666;
+    font-size: 14px;
+}
+.element-description p{
+    font-size: 16px;
+    color: #666;
+}
+.element-description p.active{
+    color: #e62e7a;
+}
