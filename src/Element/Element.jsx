@@ -26,7 +26,7 @@ const Element = (props) => {
     };
     return (
         <div className='element'>
-            <div className={`element-item ${selectClassName()}`}
+            <div className={`element__item ${selectClassName()}`}
                 onClick={props.status === "end" ? null : props.selectElement}
                 onMouseLeave={props.status === "active" ? changeTextOver : null}
                 onMouseEnter={props.status === "active" ? changeTextEnter : null}>
@@ -34,15 +34,15 @@ const Element = (props) => {
                 {/* Элемент с классом elementCorner отвечает за отрисовку верхней части
                 упаковки, в которой срезан левый угол*/}
 
-                <div className={`element-corner ${selectClassName()}`}></div>
+                <div className={`element__corner ${selectClassName()}`}></div>
 
                 <Description
                     currentWeight={props.currentWeight}
                     taste={props.taste}
                     currentText={props.currentText} />
 
-                <div className='element-image'>
-                    <div className='element-image-item'></div>
+                <div className='element__image'>
+                    <div className='element__image-item'></div>
                 </div>
 
                 <Weight changeCurrentWeight={props.changeCurrentWeight}

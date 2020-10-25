@@ -1,16 +1,16 @@
-.element-sign-text {
+.element__sign-text {
     color: #FFF;
     text-align: center;
     font-size: 13px;
     margin-top: 10px;
     list-style-type: none;
 }
-.element-sign-text__span {
+.element__sign-text-span {
     text-decoration: underline;
     text-decoration-style: dashed;
     color: #1698d9;
     cursor: pointer;
 }
-.element-sign-text__span:hover {
+.element__sign-text-span:hover {
     text-decoration: none;
 }

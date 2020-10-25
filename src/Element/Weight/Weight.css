@@ -1,4 +1,4 @@
-.element-weight {
+.element__weight {
     width: 80px;
     height: 80px;
     background-color: #1698d9;
@@ -18,22 +18,22 @@
     -ms-user-select: none;
     user-select: none;
 }
-.element-weight__span {
+.element__weight-span {
     display: block;
     margin-top: 20px;
     color: #FFF;
     font-size: 42px;
     line-height: 20px;
 }
-.element-weight p {
+.element__weight p {
     line-height: 5px;
     color: #FFF;
     font-size: 1.3em;
 }
-.element-weight.active {
+.element__weight.active {
     background-color: #d91667;
 }
-.element-weight.ended {
+.element__weight.ended {
     background-color: grey;
 }
 

@@ -9,10 +9,10 @@ const SignText = (props) => {
             case "end":
                 return <p style={{color: '#ffff66'}}>{props.signText[2]}</p>;
             default:
-                return <p>{props.signText[0]} <span className='element-sign-text__span' onClick={props.selectElement}>купи.</span></p>;
+                return <p>{props.signText[0]} <span className='element__sign-text-span' onClick={props.selectElement}>купи.</span></p>;
         }
     }
-    return <div className='element-sign-text'>
+    return <div className='element__sign-text'>
         {printText()}
     </div>
 }

@@ -25,7 +25,7 @@ const Description = (props) => {
             return <span key={index}>{elem}<br /></span>
     });
 
-    return <div className='element-description'>
+    return <div className='element__description'>
         {setCurrentText()}
         <h2>Нямушка</h2>
         <h3>{props.taste}</h3>

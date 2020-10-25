@@ -10,8 +10,8 @@ const Weight = (props) => {
         props.changeCurrentWeight(props.currentWeight)
     }
 
-    return <div className={`element-weight ${props.selectClassName()}`}>
-        <span className='element-weight__span' onClick={props.status === "end" ? null : onWeightChange}>
+    return <div className={`element__weight ${props.selectClassName()}`}>
+        <span className='element__weight-span' onClick={props.status === "end" ? null : onWeightChange}>
             {weight[props.currentWeight]}
         </span><br />
         <p>кг</p>
